@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 
-import Form from './components/Form/Form';
+import Admin from './components/AdminPanel/Admin';
 import Product from './components/Product/Product';
 
 import fish from './images/main-fish.png';
@@ -22,7 +22,7 @@ const App = () => {
                             <Product/>
                         </Grid>
                         <Grid item xs={12} sm={4}>
-                            <Form/>
+                            <Admin/>
                         </Grid>
                     </Grid>
                 </Container>
