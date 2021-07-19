@@ -6,7 +6,7 @@ import {getProducts} from './actions/porducts';
 import Admin from './components/AdminPanel/Admin';
 import Product from './components/Product/Product';
 
-import fish from './images/main-fish.png';
+import fish from './images/suatin_yeri_1080.png';
 import useStyles from './styles';
 
 const App = () => {
@@ -19,8 +19,7 @@ const App = () => {
     return (
         <Container maxWidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
-                <Typography className={classes.heading} variant="h2" align= "center">Suat'ın Yeri Balık Restaurant</Typography>
-                <img className={classes.image} src={fish} alt="mycloud" height="60" />
+                <img className={classes.image} src={fish} alt="Suat'in Yeri" height="150" />
             </AppBar>
             <Grow in>
                 <Container>
