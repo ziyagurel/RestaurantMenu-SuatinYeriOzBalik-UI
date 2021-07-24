@@ -16,7 +16,7 @@ const Item = ({product}) => {
         <Card className={classes.card}>
             <CardMedia className={classes.media} image={product.selectedImage || fish} title={product.title} />
             <div className={classes.overlay2}>
-                <Button style={{color: 'white'}} size="small" onClick={()=>{}}><MoreHorizIcon fontSize="default"/> </Button>
+                <Button style={{color: 'white'}} size="small" onClick={()=>{}}><MoreHorizIcon fontSize="medium"/> </Button>
             </div>
             <div className={classes.details}>
                 <Typography variant="body2" color="textSecondary">{product.contents}</Typography>
@@ -27,7 +27,7 @@ const Item = ({product}) => {
             <Typography className={classes.title} variant="h5" gutterBottom>{product.title}</Typography>
             <CardActions className={classes.cardActions}>
                 <Button size="small" color="primary" onClick={() =>{}} ><DeleteIcon fontSize="small"/> Delete </Button>
-                <Typography className={classes.title} variant="h7" gutterBottom >{visibilityState}</Typography>
+                <Typography className={classes.title} variant="h6" gutterBottom >{visibilityState}</Typography>
             </CardActions>
         </Card>
     );

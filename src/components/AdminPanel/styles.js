@@ -21,4 +21,12 @@ export default makeStyles((theme) => ({
   buttonSubmit: {
     marginBottom: 10,
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  select: {
+    background: 'rgba(250, 250, 250)',
+    minWidth: 330,
+  },
 }));
