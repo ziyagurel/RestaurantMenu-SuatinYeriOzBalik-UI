@@ -1,12 +1,14 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes.js';
 
-export default (posts = [], action ) => {
+export default (product = [], action ) => {
     switch (action.type){
         case FETCH_ALL:
             return action.payload;
         case CREATE:
-            return [... posts, action.payload];
+            return [... product, action.payload];
+        case DELETE:
+            return product.filter((post) => product._id != action.payload);
         default:
-            return posts;        
+            return product;        
     }
 }

@@ -4,13 +4,15 @@ import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-import fish from '../../../images/main-fish.png';
 
 import useStyles from './styles';
+import fish from '../../../images/main-fish.png';
+import { deleteProduct } from '../../../api';
 
 const Item = ({product}) => {
     const classes = useStyles();
-    console.log(product.selectedImage);
+    const dispatch = useDispatch();
+
     var visibilityState = product.isShow ? "" : "Mevcut değil";
     return (
         <Card className={classes.card}>
@@ -26,7 +28,7 @@ const Item = ({product}) => {
             </div>
             <Typography className={classes.title} variant="h5" gutterBottom>{product.title}</Typography>
             <CardActions className={classes.cardActions}>
-                <Button size="small" color="primary" onClick={() =>{}} ><DeleteIcon fontSize="small"/> Delete </Button>
+                <Button size="small" color="primary" onClick={() => dispatch(deleteProduct(product._id ))} ><DeleteIcon fontSize="small"/> Delete </Button>
                 <Typography className={classes.title} variant="h6" gutterBottom >{visibilityState}</Typography>
             </CardActions>
         </Card>
