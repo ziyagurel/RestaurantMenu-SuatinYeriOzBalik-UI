@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import {Container, AppBar, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import {getProducts} from './actions/porducts';
 
@@ -7,6 +7,7 @@ import Admin from './components/AdminPanel/Admin';
 import Product from './components/Product/Product';
 
 import fish from './images/suatin_yeri_1080.png';
+import fish_medium from './images/suatin_yeri_medium.png';
 import useStyles from './styles';
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
     return (
         <Container maxWidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
-                <img className={classes.image} src={fish} alt="Suat'in Yeri" height="150" />
+                <img className={classes.image} src={fish_medium} alt="Suat'in Yeri" height="150" />
             </AppBar>
             <Grow in>
                 <Container>

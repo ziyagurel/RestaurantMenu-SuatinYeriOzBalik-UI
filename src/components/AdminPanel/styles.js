@@ -27,6 +27,6 @@ export default makeStyles((theme) => ({
   },
   select: {
     background: 'rgba(250, 250, 250)',
-    minWidth: 330,
+    minWidth: 250,
   },
 }));
