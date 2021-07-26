@@ -7,7 +7,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
 import useStyles from './styles';
 import fish from '../../../images/main-fish.png';
-import { deleteProduct } from '../../../api';
+import { deleteProduct } from '../../../actions/porducts';
 
 const Item = ({product, setCurrentId}) => {
     const classes = useStyles();

@@ -9,7 +9,7 @@ export default (product = [], action ) => {
         case UPDATE:
             return product.map((product) => product._id === action.payload._id ? action.payload : product);
         case DELETE:
-            return product.filter((post) => product._id !== action.payload);
+            return product.filter((product) => product._id !== action.payload);
         default:
             return product;        
     }
