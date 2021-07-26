@@ -4,16 +4,16 @@ import FileBase from 'react-file-base64';
 import { useDispatch, useSelector } from 'react-redux';
 
 import useStyles from './styles';
-import { createProduct } from '../../actions/porducts.js';
+import { createProduct, updateProduct } from '../../actions/porducts.js';
 
-const Admin = () => {
+const Admin = ({currentId, setCurrentId}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const [productData, setProductData] = useState({ title: '', contents:'', price: '', selectedImage: '', category : '', isShow: true,  });
+    const product = useSelector((state) => currentId ? state.products.find((p) => p._id === currentId ) : null);
+    const [productData, setProductData] = useState({ title: '', contents:'', price: '', selectedImage: '', category : 0, isShow: true,  });
     const [open, setOpen] = React.useState(false);
   
     const handleChange = (event) => {
-        console.log(event);
         if(event.target.value === 'Seçiniz'){
             
         } else{
@@ -21,6 +21,9 @@ const Admin = () => {
         }
     };
   
+    useEffect(() => {
+        if(product) setProductData(product);
+    }, [product])
     const handleClose = () => {
       setOpen(false);
     };
@@ -30,15 +33,17 @@ const Admin = () => {
     };
 
     const handleSubmit = (e) => {
-        if(productData.title !== "" || productData.contents !== "" || productData.price !== "" || productData.category !== ""){
-            e.preventDefault();
+        e.preventDefault();
+        if(currentId){
+            dispatch(updateProduct(currentId, productData));
+        } else if(productData.title !== "" || productData.contents !== "" || productData.price !== "" || productData.category !== ""){
             dispatch(createProduct(productData));
-        } else {}
+        }
         clear();
     }
 
     const clear = () => {
-        setProductData({title: '', contents:'', price: '', selectedImage: '', isShow: true })
+        setProductData({title: '', contents:'', price: '', selectedImage: '', category: 0, isShow: true })
     }
     
     return (
@@ -51,7 +56,7 @@ const Admin = () => {
                 <FormControl className={classes.formControl}>
                     <InputLabel id="categoryLabelId">Kategori</InputLabel>
                         <Select className = {classes.select} labelId="categoryLabelId" id="categorySelectId" open={open} onClose={handleClose} onOpen={handleOpen} value={productData.category} onChange={handleChange}>
-                            <MenuItem value=""> <em>Seçiniz</em> </MenuItem>
+                            <MenuItem value={0}> <em>Seçiniz</em> </MenuItem>
                             <MenuItem value={1}>Balıklar</MenuItem>
                             <MenuItem value={2}>Salatalar</MenuItem>
                             <MenuItem value={3}>Mezeler</MenuItem>

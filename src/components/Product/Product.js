@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux';
 import useStyles from './styles';
 import { CircularProgress, Grid } from '@material-ui/core';
 
-const Product = () => {
+const Product = ({setCurrentId}) => {
     const products = useSelector((state) => state.products);
     const classes = useStyles();
 
@@ -14,7 +14,7 @@ const Product = () => {
             <Grid className = { classes.container} container alignItems = "stretch" spacing={3}>
                 {products.map((product) => (
                     <Grid key = {product._id} item xs={12} sm={6} md={6} >
-                        <Item product={product}/>
+                        <Item product={product} setCurrentId = {setCurrentId} />
                     </Grid>
                 ))}
             </Grid>
