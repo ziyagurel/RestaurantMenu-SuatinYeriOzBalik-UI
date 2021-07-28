@@ -8,6 +8,7 @@ import Product from './components/Product/Product';
 
 import fish from './images/suatin_yeri_1080.png';
 import fish_medium from './images/suatin_yeri_medium.png';
+import fish_medium_deneme from './images/suatin_yeri_d.png';
 import useStyles from './styles';
 
 const App = () => {

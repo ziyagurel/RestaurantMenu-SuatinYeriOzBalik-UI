@@ -61,7 +61,6 @@ const Admin = ({currentId, setCurrentId}) => {
                             <MenuItem value={2}>Salatalar</MenuItem>
                             <MenuItem value={3}>Mezeler</MenuItem>
                             <MenuItem value={4}>İçecekler</MenuItem>
-                            <MenuItem value={4}>hakkımız</MenuItem>
                         </Select>
                 </FormControl>
                 <div className={classes.fileInput}>
