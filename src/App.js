@@ -10,6 +10,8 @@ import fish from './images/suatin_yeri_1080.png';
 import fish_medium from './images/suatin_yeri_medium.png';
 import fish_medium_deneme from './images/suatin_yeri_d.png';
 import useStyles from './styles';
+import Contents from './components/Menu/contents/Contents';
+import Menu from './components/Menu/Menu';
 
 const App = () => {
     const [currentId, setCurrentId] = useState(null);
@@ -28,7 +30,7 @@ const App = () => {
                 <Container>
                     <Grid className = {classes.mainContainer} container justifyContent ="space-between" alignItems="stretch" spacing={4}>
                         <Grid item xs={12} sm={7}>
-                            <Product setCurrentId = {setCurrentId} />
+                            <Menu setCurrentId = {setCurrentId} />
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Admin currentId = {currentId} />
